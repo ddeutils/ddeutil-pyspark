@@ -1,6 +1,10 @@
 # Solution 01: Docker Compose
 
-[Medium: Testing Apache Spark Locally with Docker Compose](https://medium.com/@SaphE/testing-apache-spark-locally-docker-compose-and-kubernetes-deployment-94d35a54f222)
+**Table of Contents**:
+
+* [Create Spark Cluster](#create-spark-cluster)
+* [Running Job](#running-job)
+* [References](#references)
 
 ## Create Spark Cluster
 
@@ -13,7 +17,7 @@ docker-compose up
 ```
 
 > **Note**: \
-> You can monitor the spark job from https://localhost:9090 
+> You can monitor the spark job from https://localhost:9090
 
 ## Running Job
 
@@ -28,3 +32,7 @@ bin/spark-submit --master spark://0.0.0.0:7077 \
     local:///opt/spark/examples/jars/spark-examples_2.12-3.4.0.jar \
     100
 ```
+
+## References
+
+* [Medium: Testing Apache Spark Locally with Docker Compose](https://medium.com/@SaphE/testing-apache-spark-locally-docker-compose-and-kubernetes-deployment-94d35a54f222)

@@ -4,6 +4,7 @@ version: '3.7'
 services:
     spark-master:
         image: bitnami/spark:latest
+        container_name: spark-master
         ports:
           - "8080:8080"
           - "7077:7077"
@@ -13,6 +14,8 @@ services:
           - SPARK_LOCAL_STORAGE_ENCRYPTION_ENABLED=no
           - SPARK_SSL_ENABLED=no
           - SPARK_USER=spark
+        volumes:
+          - ./:/mounted-data
     spark-worker:
         image: bitnami/spark:latest
         depends_on:
@@ -27,3 +30,5 @@ services:
           - SPARK_LOCAL_STORAGE_ENCRYPTION_ENABLED=no
           - SPARK_SSL_ENABLED=no
           - SPARK_USER=spark
+        volumes:
+          - ./:/mounted-data

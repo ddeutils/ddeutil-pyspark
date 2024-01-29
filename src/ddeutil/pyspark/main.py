@@ -1,13 +1,7 @@
 from pyspark.sql import SparkSession
 
-
 # Create a SparkSession
-spark = (
-   SparkSession
-      .builder
-      .appName("Local Application")
-      .getOrCreate()
-)
+spark = SparkSession.builder.appName("Local Application").getOrCreate()
 
 rdd = spark.sparkContext.parallelize(range(1, 100))
 
